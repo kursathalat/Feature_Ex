@@ -15,7 +15,7 @@ with open('corpus.json', 'r') as json_file:
 words_to_tfidf = ["rock"]
 
 
-def vectorize(corpus):
+def vectorize(corpus) -> tuple:
     """
     Vectorize the text data using the TfidfVectorizer
     """
@@ -30,7 +30,7 @@ def vectorize(corpus):
 tf_idf_vectors, terms = vectorize(corpus)
 
 
-def get_tfidf_scores(corpus, tf_idf_vectors, terms):
+def get_tfidf_scores(corpus, tf_idf_vectors, terms) -> dict:
     """
     Extract the tf-idf scores for the words we are interested in
     """
@@ -49,7 +49,7 @@ def get_tfidf_scores(corpus, tf_idf_vectors, terms):
 
     return tf_idf_scores
 
-def save_tfidf_scores(tf_idf_scores,words_to_tfidf):
+def save_tfidf_scores(tf_idf_scores,words_to_tfidf) -> None:
     """
     Save the tf-idf scores in a csv file
     """
